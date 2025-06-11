@@ -1,0 +1,10 @@
+﻿################################################################################
+# Il file gitignore è stato creato automaticamente da Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/AnimalEvo/DesignTimeBuild/.dtbcache.v2
+/.vs/AnimalEvo/FileContentIndex/a08d1517-46ac-4563-a872-a3561415cc1e.vsidx
+/.vs/AnimalEvo/v17/.suo
+/AnimalEvoApp/obj/Debug/net8.0-windows/AnimalEvoApp.assets.cache
+/AnimalEvoApp/obj/Debug/net8.0-windows/AnimalEvoApp.GeneratedMSBuildEditorConfig.editorconfig
+*.json
