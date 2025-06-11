@@ -156,43 +156,42 @@ public partial class Form1 : Form
             generation++;
             var color = generationColors[generation % generationColors.Count];
 
-            int minRadius = 1;
-            int maxRadius = 5;
-            // Più animali rimangono, più il raggio è grande; meno animali, più il raggio si restringe
-            int radius = Math.Max(minRadius, maxRadius * animals.Count / Math.Max(1, animalCount));
+            // Calcola la somma totale dei Lifetime dei sopravvissuti
+            int totalLifetime = survivors.Sum(a => a.Lifetime);
 
             foreach (var pos in deadPositions)
             {
-                int x = pos.X;
-                int y = pos.Y;
-
-                if (grid[x, y] == CellType.Animal)
+                int x, y;
+                // Trova una posizione random vuota (né animale né cibo)
+                do
                 {
-                    bool trovato = false;
-                    // Cerca una posizione libera nel raggio calcolato
-                    for (int rx = -radius; rx <= radius && !trovato; rx++)
-                    {
-                        for (int ry = -radius; ry <= radius && !trovato; ry++)
-                        {
-                            int nx = x + rx;
-                            int ny = y + ry;
-                            if (nx >= 0 && nx < gridSize && ny >= 0 && ny < gridSize && grid[nx, ny] == CellType.Empty)
-                            {
-                                x = nx;
-                                y = ny;
-                                trovato = true;
-                            }
-                        }
-                    }
-                }
+                    x = rand.Next(gridSize);
+                    y = rand.Next(gridSize);
+                } while (grid[x, y] != CellType.Empty);
 
-                // AGGIORNA SUBITO LA GRIGLIA QUI
                 grid[x, y] = CellType.Animal;
 
                 NeuralNetwork brain;
-                if (survivors.Count > 0)
+                if (survivors.Count > 0 && totalLifetime > 0)
                 {
-                    // Prendi un sopravvissuto a caso e muta il suo cervello
+                    // Seleziona un genitore con probabilità proporzionale al Lifetime
+                    int r = rand.Next(totalLifetime);
+                    int acc = 0;
+                    Animal parent = survivors[0];
+                    foreach (var a in survivors)
+                    {
+                        acc += a.Lifetime;
+                        if (r < acc)
+                        {
+                            parent = a;
+                            break;
+                        }
+                    }
+                    brain = parent.GetBrain().CloneAndMutate();
+                }
+                else if (survivors.Count > 0)
+                {
+                    // fallback: scegli a caso se tutti hanno Lifetime 0
                     var parent = survivors[rand.Next(survivors.Count)];
                     brain = parent.GetBrain().CloneAndMutate();
                 }

@@ -10,6 +10,7 @@ namespace AnimalEvoApp
     {
         public int X, Y;
         public int Energy;
+        public int Lifetime = 0; // <-- aggiunto
         private Random rand = new Random();
         private NeuralNetwork brain;
         public Color Color { get; set; }
@@ -33,6 +34,7 @@ namespace AnimalEvoApp
         public void Update(Form1.CellType[,] grid)
         {
             Energy--;
+            Lifetime++; // <-- incrementa a ogni update
 
             // Trova cibo più vicino
             int nearestDx = 0, nearestDy = 0;
