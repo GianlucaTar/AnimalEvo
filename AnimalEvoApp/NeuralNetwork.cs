@@ -8,9 +8,9 @@ namespace AnimalEvoApp
 {
     public class NeuralNetwork
     {
-        public const int hiddenCount = 2;
+        public const int hiddenCount = 4;
         public const int inputCount = 3;
-        public const int outputCount = 4;
+        public const int outputCount = 2;
 
         public double[,] w1 = new double[3, hiddenCount]; // input -> hidden
         public double[,] w2 = new double[hiddenCount, 2]; // hidden -> output

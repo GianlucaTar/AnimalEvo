@@ -1,0 +1,25 @@
+﻿################################################################################
+# Il file gitignore è stato creato automaticamente da Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/AnimalEvo/DesignTimeBuild/.dtbcache.v2
+/.vs/AnimalEvo/FileContentIndex/9d6a9c8f-e5f9-49fa-9cc5-795cd5c15d35.vsidx
+/.vs/AnimalEvo/v17/.suo
+/AnimalEvoApp/bin/Debug/net8.0-windows/AnimalEvoApp.dll
+/AnimalEvoApp/bin/Debug/net8.0-windows/AnimalEvoApp.exe
+/AnimalEvoApp/bin/Debug/net8.0-windows/AnimalEvoApp.pdb
+/AnimalEvoApp/obj/Debug/net8.0-windows/ref/AnimalEvoApp.dll
+/AnimalEvoApp/obj/Debug/net8.0-windows/refint/AnimalEvoApp.dll
+/AnimalEvoApp/obj/Debug/net8.0-windows/AnimalEvoApp.AssemblyInfo.cs
+/AnimalEvoApp/obj/Debug/net8.0-windows/AnimalEvoApp.AssemblyInfoInputs.cache
+/AnimalEvoApp/obj/Debug/net8.0-windows/AnimalEvoApp.assets.cache
+/AnimalEvoApp/obj/Debug/net8.0-windows/AnimalEvoApp.csproj.FileListAbsolute.txt
+/AnimalEvoApp/obj/Debug/net8.0-windows/AnimalEvoApp.dll
+/AnimalEvoApp/obj/Debug/net8.0-windows/AnimalEvoApp.GeneratedMSBuildEditorConfig.editorconfig
+/AnimalEvoApp/obj/Debug/net8.0-windows/AnimalEvoApp.genruntimeconfig.cache
+/AnimalEvoApp/obj/Debug/net8.0-windows/AnimalEvoApp.pdb
+*.json
+/AnimalEvoApp/obj/Debug/net8.0-windows/apphost.exe
+/AnimalEvoApp/obj/AnimalEvoApp.csproj.nuget.dgspec.json
+/AnimalEvoApp/obj/project.assets.json
+/AnimalEvoApp/obj/project.nuget.cache
